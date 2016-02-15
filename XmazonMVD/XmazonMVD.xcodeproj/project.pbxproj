@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55FE39401C72237000BD1C84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE393F1C72237000BD1C84 /* main.m */; };
+		55FE39431C72237000BD1C84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39421C72237000BD1C84 /* AppDelegate.m */; };
+		55FE394B1C72237000BD1C84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE394A1C72237000BD1C84 /* Images.xcassets */; };
+		55FE394E1C72237000BD1C84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FE394C1C72237000BD1C84 /* LaunchScreen.xib */; };
+		55FE395A1C72237000BD1C84 /* XmazonMVDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39591C72237000BD1C84 /* XmazonMVDTests.m */; };
+		55FE396B1C7224F800BD1C84 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39691C7224F800BD1C84 /* LoginViewController.m */; };
+		55FE396C1C7224F800BD1C84 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FE396A1C7224F800BD1C84 /* LoginViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55FE39541C72237000BD1C84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55FE39321C72237000BD1C84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55FE39391C72237000BD1C84;
+			remoteInfo = XmazonMVD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55FE393A1C72237000BD1C84 /* XmazonMVD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XmazonMVD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55FE393E1C72237000BD1C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55FE393F1C72237000BD1C84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55FE39411C72237000BD1C84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55FE39421C72237000BD1C84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55FE394A1C72237000BD1C84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		55FE394D1C72237000BD1C84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		55FE39531C72237000BD1C84 /* XmazonMVDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XmazonMVDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55FE39581C72237000BD1C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55FE39591C72237000BD1C84 /* XmazonMVDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XmazonMVDTests.m; sourceTree = "<group>"; };
+		55FE39681C7224F800BD1C84 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		55FE39691C7224F800BD1C84 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		55FE396A1C7224F800BD1C84 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55FE39371C72237000BD1C84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FE39501C72237000BD1C84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55FE39311C72237000BD1C84 = {
+			isa = PBXGroup;
+			children = (
+				55FE393C1C72237000BD1C84 /* XmazonMVD */,
+				55FE39561C72237000BD1C84 /* XmazonMVDTests */,
+				55FE393B1C72237000BD1C84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55FE393B1C72237000BD1C84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55FE393A1C72237000BD1C84 /* XmazonMVD.app */,
+				55FE39531C72237000BD1C84 /* XmazonMVDTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55FE393C1C72237000BD1C84 /* XmazonMVD */ = {
+			isa = PBXGroup;
+			children = (
+				55FE39411C72237000BD1C84 /* AppDelegate.h */,
+				55FE39421C72237000BD1C84 /* AppDelegate.m */,
+				55FE39681C7224F800BD1C84 /* LoginViewController.h */,
+				55FE39691C7224F800BD1C84 /* LoginViewController.m */,
+				55FE396A1C7224F800BD1C84 /* LoginViewController.xib */,
+				55FE394A1C72237000BD1C84 /* Images.xcassets */,
+				55FE394C1C72237000BD1C84 /* LaunchScreen.xib */,
+				55FE393D1C72237000BD1C84 /* Supporting Files */,
+			);
+			path = XmazonMVD;
+			sourceTree = "<group>";
+		};
+		55FE393D1C72237000BD1C84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55FE393E1C72237000BD1C84 /* Info.plist */,
+				55FE393F1C72237000BD1C84 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55FE39561C72237000BD1C84 /* XmazonMVDTests */ = {
+			isa = PBXGroup;
+			children = (
+				55FE39591C72237000BD1C84 /* XmazonMVDTests.m */,
+				55FE39571C72237000BD1C84 /* Supporting Files */,
+			);
+			path = XmazonMVDTests;
+			sourceTree = "<group>";
+		};
+		55FE39571C72237000BD1C84 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55FE39581C72237000BD1C84 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55FE39391C72237000BD1C84 /* XmazonMVD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55FE395D1C72237000BD1C84 /* Build configuration list for PBXNativeTarget "XmazonMVD" */;
+			buildPhases = (
+				55FE39361C72237000BD1C84 /* Sources */,
+				55FE39371C72237000BD1C84 /* Frameworks */,
+				55FE39381C72237000BD1C84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XmazonMVD;
+			productName = XmazonMVD;
+			productReference = 55FE393A1C72237000BD1C84 /* XmazonMVD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55FE39521C72237000BD1C84 /* XmazonMVDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55FE39601C72237000BD1C84 /* Build configuration list for PBXNativeTarget "XmazonMVDTests" */;
+			buildPhases = (
+				55FE394F1C72237000BD1C84 /* Sources */,
+				55FE39501C72237000BD1C84 /* Frameworks */,
+				55FE39511C72237000BD1C84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55FE39551C72237000BD1C84 /* PBXTargetDependency */,
+			);
+			name = XmazonMVDTests;
+			productName = XmazonMVDTests;
+			productReference = 55FE39531C72237000BD1C84 /* XmazonMVDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55FE39321C72237000BD1C84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Pinson Celine";
+				TargetAttributes = {
+					55FE39391C72237000BD1C84 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					55FE39521C72237000BD1C84 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 55FE39391C72237000BD1C84;
+					};
+				};
+			};
+			buildConfigurationList = 55FE39351C72237000BD1C84 /* Build configuration list for PBXProject "XmazonMVD" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55FE39311C72237000BD1C84;
+			productRefGroup = 55FE393B1C72237000BD1C84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55FE39391C72237000BD1C84 /* XmazonMVD */,
+				55FE39521C72237000BD1C84 /* XmazonMVDTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55FE39381C72237000BD1C84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FE394E1C72237000BD1C84 /* LaunchScreen.xib in Resources */,
+				55FE394B1C72237000BD1C84 /* Images.xcassets in Resources */,
+				55FE396C1C7224F800BD1C84 /* LoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FE39511C72237000BD1C84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55FE39361C72237000BD1C84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FE39431C72237000BD1C84 /* AppDelegate.m in Sources */,
+				55FE39401C72237000BD1C84 /* main.m in Sources */,
+				55FE396B1C7224F800BD1C84 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55FE394F1C72237000BD1C84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55FE395A1C72237000BD1C84 /* XmazonMVDTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55FE39551C72237000BD1C84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55FE39391C72237000BD1C84 /* XmazonMVD */;
+			targetProxy = 55FE39541C72237000BD1C84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55FE394C1C72237000BD1C84 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55FE394D1C72237000BD1C84 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55FE395B1C72237000BD1C84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		55FE395C1C72237000BD1C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55FE395E1C72237000BD1C84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XmazonMVD/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		55FE395F1C72237000BD1C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = XmazonMVD/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		55FE39611C72237000BD1C84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = XmazonMVDTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XmazonMVD.app/XmazonMVD";
+			};
+			name = Debug;
+		};
+		55FE39621C72237000BD1C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = XmazonMVDTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XmazonMVD.app/XmazonMVD";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55FE39351C72237000BD1C84 /* Build configuration list for PBXProject "XmazonMVD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FE395B1C72237000BD1C84 /* Debug */,
+				55FE395C1C72237000BD1C84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55FE395D1C72237000BD1C84 /* Build configuration list for PBXNativeTarget "XmazonMVD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FE395E1C72237000BD1C84 /* Debug */,
+				55FE395F1C72237000BD1C84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55FE39601C72237000BD1C84 /* Build configuration list for PBXNativeTarget "XmazonMVDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FE39611C72237000BD1C84 /* Debug */,
+				55FE39621C72237000BD1C84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55FE39321C72237000BD1C84 /* Project object */;
+}
