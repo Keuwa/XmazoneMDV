@@ -14,6 +14,10 @@
 		55FE395A1C72237000BD1C84 /* XmazonMVDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39591C72237000BD1C84 /* XmazonMVDTests.m */; };
 		55FE396B1C7224F800BD1C84 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39691C7224F800BD1C84 /* LoginViewController.m */; };
 		55FE396C1C7224F800BD1C84 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FE396A1C7224F800BD1C84 /* LoginViewController.xib */; };
+		55FE39701C723B3800BD1C84 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE396E1C723B3800BD1C84 /* HomeViewController.m */; };
+		55FE39711C723B3800BD1C84 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FE396F1C723B3800BD1C84 /* HomeViewController.xib */; };
+		55FE39741C723CB200BD1C84 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39731C723CB200BD1C84 /* HomeModel.m */; };
+		55FE39771C723D9D00BD1C84 /* OAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39761C723D9D00BD1C84 /* OAuth2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,13 @@
 		55FE39681C7224F800BD1C84 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		55FE39691C7224F800BD1C84 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		55FE396A1C7224F800BD1C84 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		55FE396D1C723B3800BD1C84 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		55FE396E1C723B3800BD1C84 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		55FE396F1C723B3800BD1C84 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		55FE39721C723CB200BD1C84 /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		55FE39731C723CB200BD1C84 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		55FE39751C723D9D00BD1C84 /* OAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth2.h; sourceTree = "<group>"; };
+		55FE39761C723D9D00BD1C84 /* OAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +94,13 @@
 			children = (
 				55FE39411C72237000BD1C84 /* AppDelegate.h */,
 				55FE39421C72237000BD1C84 /* AppDelegate.m */,
+				55FE39751C723D9D00BD1C84 /* OAuth2.h */,
+				55FE39761C723D9D00BD1C84 /* OAuth2.m */,
+				55FE396D1C723B3800BD1C84 /* HomeViewController.h */,
+				55FE396E1C723B3800BD1C84 /* HomeViewController.m */,
+				55FE396F1C723B3800BD1C84 /* HomeViewController.xib */,
+				55FE39721C723CB200BD1C84 /* HomeModel.h */,
+				55FE39731C723CB200BD1C84 /* HomeModel.m */,
 				55FE39681C7224F800BD1C84 /* LoginViewController.h */,
 				55FE39691C7224F800BD1C84 /* LoginViewController.m */,
 				55FE396A1C7224F800BD1C84 /* LoginViewController.xib */,
@@ -202,6 +220,7 @@
 				55FE394E1C72237000BD1C84 /* LaunchScreen.xib in Resources */,
 				55FE394B1C72237000BD1C84 /* Images.xcassets in Resources */,
 				55FE396C1C7224F800BD1C84 /* LoginViewController.xib in Resources */,
+				55FE39711C723B3800BD1C84 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FE39741C723CB200BD1C84 /* HomeModel.m in Sources */,
 				55FE39431C72237000BD1C84 /* AppDelegate.m in Sources */,
+				55FE39771C723D9D00BD1C84 /* OAuth2.m in Sources */,
 				55FE39401C72237000BD1C84 /* main.m in Sources */,
 				55FE396B1C7224F800BD1C84 /* LoginViewController.m in Sources */,
+				55FE39701C723B3800BD1C84 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

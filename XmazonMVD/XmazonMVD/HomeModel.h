@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HomeModel : NSObject
+@interface HomeModel : NSObject 
 
 @end
