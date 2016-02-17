@@ -23,6 +23,7 @@
 }
 
 -(void)setTokens{
+    
     // 1
     NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr/oauth/token"];
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -34,13 +35,12 @@
     NSString* param = [[NSString alloc]initWithFormat:@"grant_type=client_credentials&client_id=%@&client_secret=%@",[OAuth2 getId],[OAuth2 getSecret]];
     [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding ]];
 
-    NSLog(@"%@",request);
         // 4
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if(!error){
                 self.application = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-                NSLog(@"%@",self.application);
-            
+                NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+                [userDefaults setObject:self.application forKey:@"application"];
             }
         
         }] resume];
@@ -53,7 +53,6 @@
         {
             self.user = user;
         }
-        
         if(app){
             self.application = app;
         }

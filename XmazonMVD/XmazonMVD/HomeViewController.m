@@ -18,8 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Home";
-    OAuth2* auth = [[OAuth2 alloc]initWithDictionaryUser:nil andDictionaryApp:nil];
-    NSLog(@"%@",[auth.application objectForKey:@"access_token"]);
+    
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"\nUSER DEFAULT : \n%@",[userDefaults objectForKey:@"application"]);
+    NSMutableDictionary* app_token = [[NSMutableDictionary alloc]initWithDictionary:[userDefaults objectForKey:@"application"]];
+    NSMutableDictionary* user_token = [[NSMutableDictionary alloc]initWithDictionary:[userDefaults objectForKey:@"user"]];
+    
+    
+    OAuth2* auth = [[OAuth2 alloc]initWithDictionaryUser:user_token andDictionaryApp:app_token];
     
     
     // Do any additional setup after loading the view from its nib.
