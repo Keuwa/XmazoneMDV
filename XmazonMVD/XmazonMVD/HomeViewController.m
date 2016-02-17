@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "OAuth2.h"
 
 @interface HomeViewController ()
 
@@ -17,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Home";
-    
-    
+    OAuth2* auth = [[OAuth2 alloc]initWithDictionaryUser:nil andDictionaryApp:nil];
+    NSLog(@"%@",[auth.application objectForKey:@"access_token"]);
     
     
     // Do any additional setup after loading the view from its nib.

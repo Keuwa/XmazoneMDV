@@ -10,16 +10,60 @@
 
 @implementation OAuth2
 
-@synthesize access_token = access_token_;
-@synthesize refresh_token = refresh_token_;
-@synthesize type = type_;
+@synthesize user = user_;
+@synthesize application = application_;
 
--(void)setTokens{
-    
-}
 
 -(void)setTokensWithRefreshToken{
     
+}
+
+-(void)setUserTokens{
+    
+}
+
+-(void)setTokens{
+    // 1
+    NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr/oauth/token"];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    // 2
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"POST";
+    NSString* param = [[NSString alloc]initWithFormat:@"grant_type=client_credentials&client_id=%@&client_secret=%@",[OAuth2 getId],[OAuth2 getSecret]];
+    [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding ]];
+
+    NSLog(@"%@",request);
+        // 4
+        [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if(!error){
+                self.application = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                NSLog(@"%@",self.application);
+            
+            }
+        
+        }] resume];
+}
+
+
+-(instancetype)initWithDictionaryUser:(NSMutableDictionary*)user andDictionaryApp:(NSMutableDictionary*)app{
+    if (self  = [super init]) {
+        if(user)
+        {
+            self.user = user;
+        }
+        
+        if(app){
+            self.application = app;
+        }
+        else{
+            [self setTokens];///Implement methode to get tokens
+        }
+        
+    }
+    
+    return self;
 }
 
 
