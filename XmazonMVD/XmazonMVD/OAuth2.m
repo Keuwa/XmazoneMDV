@@ -15,7 +15,7 @@
 
 
 -(void)setTokensWithRefreshTokenWithTokenType:(int)type{
-
+   NSLog(@"setTokensWithRefreshTokenWithTokenType\n");
     
     ///If type = 1 c'est un token de type application
     ///If type = 2 c'est un token de type user
@@ -40,8 +40,10 @@
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if(!error){ ///gerer si le refresh token est plus bon non plus
             if(type==1){ //Refresh application
-                self.application = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
                 NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+                NSLog(@" before refresh token : %@",self.application);
+                self.application = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                NSLog(@" After refresh token : %@",self.application);
                 [userDefaults setObject:self.application forKey:@"application"];
             }
             else{ //refresh user
@@ -55,11 +57,11 @@
 }
 
 -(void)setUserTokens{
-    
+       NSLog(@"setUserTokens\n");
 }
 
 -(void)setTokens{
-    
+       NSLog(@"setTokens\n");
     // 1
     NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr/oauth/token"];
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -84,6 +86,7 @@
 
 
 -(instancetype)initWithDictionaryUser:(NSMutableDictionary*)user andDictionaryApp:(NSMutableDictionary*)app{
+       NSLog(@"initWithDictionaryUser\n");
     if (self  = [super init]) {
         if(user)
         {

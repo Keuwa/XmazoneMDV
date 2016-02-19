@@ -18,6 +18,7 @@
 @synthesize model = model_;
 
 -(void)viewDidAppear:(BOOL)animated{
+    [NSThread sleepForTimeInterval:3.0f];
     [tableView reloadData];
 }
 
@@ -32,7 +33,7 @@
     NSMutableDictionary* app_token = [[NSMutableDictionary alloc]initWithDictionary:[userDefaults objectForKey:@"application"]];
     NSMutableDictionary* user_token = [[NSMutableDictionary alloc]initWithDictionary:[userDefaults objectForKey:@"user"]];
     
-    
+    ///[app_token setObject:@"azeazaeaze"forKey:@"access_token"];
     OAuth2* auth = [[OAuth2 alloc]initWithDictionaryUser:user_token andDictionaryApp:app_token];
     self.model = [[HomeModel alloc]initWithOauth:auth];
     // Do any additional setup after loading the view from its nib.

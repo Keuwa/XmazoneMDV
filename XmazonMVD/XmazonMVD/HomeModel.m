@@ -14,6 +14,7 @@
 @synthesize oauth = oauth_;
 
 -(instancetype)initWithOauth:(OAuth2 *)oauth{
+    NSLog(@"InitWithOauth\n");
     if(self = [super init]){
         self.oauth = oauth;
         //Init le tableau avec tous les magasins
@@ -40,20 +41,24 @@
                     self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
                 }
                 else if([[[code objectForKey:@"code"]description] isEqualToString:@"401"]){
+                    NSLog(@"Refresh_token used : %@",[oauth.application objectForKey:@"refresh_token"]);
+
                     [oauth setTokensWithRefreshTokenWithTokenType:1];
-                    NSLog(@"Refresh_token used");
+                    [NSThread sleepForTimeInterval:2.0f];
+
                     //On refais la requete avec les nouveaux token
                     NSString* str = [[NSString alloc]initWithFormat:@"Bearer %@",[oauth.application objectForKey:@"access_token"]];
+                    NSLog(@"Acces token : %@",[oauth.application objectForKey:@"access_token"]);
                     NSMutableDictionary* headers = [request.allHTTPHeaderFields mutableCopy];
                     [headers setObject:str forKey:@"Authorization"];
                     request.allHTTPHeaderFields = headers;
-                    
                     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                         if(!error){
                             NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
                             if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
                             {
                                 self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
+                                NSLog(@"%@",listMagasin_);
                             }
                             else{
                                 NSLog(@"Uncaugth error %@ dans le refresh token ligne 59",[code objectForKey:@"code"]);
