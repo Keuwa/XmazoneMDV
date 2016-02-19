@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OAuth2.h"
 
 @interface HomeModel : NSObject 
+{
+    @private
+    OAuth2 *oauth_;
+    NSMutableArray* listMagasin_;
+    
+}
+@property (nonatomic,strong)OAuth2* oauth;
+@property (nonatomic,strong)NSMutableArray* listMagasin;
+
+-(instancetype)initWithOauth:(OAuth2*)oauth;
+
 
 @end

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeModel.h"
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+{
+    __weak IBOutlet UITableView *tableView;
+    HomeModel* model_;
+}
+@property (strong,nonatomic)HomeModel* model;
 
 @end

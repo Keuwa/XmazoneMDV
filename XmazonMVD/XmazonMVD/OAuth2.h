@@ -22,7 +22,7 @@
 
 
 
--(void)setTokensWithRefreshToken;
+-(void)setTokensWithRefreshTokenWithTokenType:(int)type;
 -(void)setTokens;
 -(void)setUserTokens;
 
