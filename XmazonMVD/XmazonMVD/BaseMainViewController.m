@@ -12,7 +12,20 @@
 
 @end
 
+
 @implementation BaseMainViewController
+@synthesize oauth = oauth_;
+@synthesize adminButton = admiButton;
+
+-(instancetype) initWithOauth: (OAuth2*)oauth
+{
+    if(self = [super init])
+    {
+        self.oauth = oauth;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

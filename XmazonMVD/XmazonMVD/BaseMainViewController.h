@@ -19,7 +19,17 @@
  
  */
 #import <UIKit/UIKit.h>
+#import "OAuth2.h"
 
 @interface BaseMainViewController : UIViewController
+{
+@private
+    OAuth2 *oauth_;
+    
+}
+@property (nonatomic,strong)OAuth2* oauth;
+@property (weak, nonatomic) IBOutlet UIView *adminButton;
+
+-(instancetype) initWithOauth: (OAuth2*)oauth;
 
 @end

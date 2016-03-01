@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "HomeModel.h"
 #import "OAuth2.h"
+#import "BaseMainViewController.h"
+
 
 @interface HomeViewController ()
 
@@ -48,7 +50,8 @@ static NSString* const kCellReuseIdentifier = @"CoolId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellReuseIdentifier];
-    if(!cell) {
+    if(!cell)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kCellReuseIdentifier];
     }
     cell.textLabel.text = [[[self.model listMagasin]objectAtIndex:indexPath.row] objectForKey:@"name"];
