@@ -19,7 +19,9 @@
         self.oauth = oauth;
         //Init le tableau avec tous les magasins
         
-        [oauth createUserWithEmail: @"GET" andPassword:@"GET" ];
+        [oauth createUserWithEmail: @"bb" andPassword:@"bb" ];
+        [oauth connectUserWithLogin:@"bb" andPassword:@"bb" ];
+        
         // 1
         NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr/store/list"];
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];

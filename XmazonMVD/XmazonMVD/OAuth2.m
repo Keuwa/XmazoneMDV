@@ -59,7 +59,6 @@
 
 -(void) createUserWithEmail: (NSString *) email andPassword: (NSString *) password
 {
-    // 1
     NSURL * url = [ NSURL URLWithString:@"http://xmazon.appspaces.fr/auth/subscribe" ];
     NSURLSessionConfiguration * config = [ NSURLSessionConfiguration defaultSessionConfiguration ];
     NSURLSession * session = [ NSURLSession sessionWithConfiguration: config ];
@@ -80,16 +79,20 @@
     NSLog(@"Access token : %@",[self.application objectForKey:@"access_token"]);
     
     // 3
-    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if(!error){
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+        if(!error)
+        {
             NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            
             if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
             {
                 //self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
                 NSLog( @"%@", [code objectForKey:@"result"] );
             }
             
-            else if([[[code objectForKey:@"code"]description] isEqualToString:@"401"]){
+            else if([[[code objectForKey:@"code"]description] isEqualToString:@"401"])
+            {
                 NSLog(@"Refresh_token used : %@",[self.application objectForKey:@"refresh_token"]);
                 
                 [self setTokensWithRefreshTokenWithTokenType:1];
@@ -101,8 +104,10 @@
                 NSMutableDictionary* headers = [request.allHTTPHeaderFields mutableCopy];
                 [headers setObject:str forKey:@"Authorization"];
                 request.allHTTPHeaderFields = headers;
-                [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                    if(!error){
+                [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                {
+                    if(!error)
+                    {
                         NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
                         if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
                         {
@@ -115,12 +120,86 @@
                 }] resume];
                 ///Fin de la deuxieme requete
             }
-            else{
+            else
+            {
                 NSLog(@"Uncaugth error %@",[code objectForKey:@"code"]);
             }
         }
         
-    }] resume];}
+    }] resume];
+}
+
+-(void) connectUserWithLogin: (NSString *) login andPassword: (NSString *) password
+{
+    NSURL * url = [ NSURL URLWithString:@"http://xmazon.appspaces.fr/oauth/token" ];
+    NSURLSessionConfiguration * config = [ NSURLSessionConfiguration defaultSessionConfiguration ];
+    NSURLSession * session = [ NSURLSession sessionWithConfiguration: config ];
+    NSMutableURLRequest * request = [ [NSMutableURLRequest alloc] initWithURL: url ];
+    NSString * str = [ [NSString alloc]initWithFormat:@"Bearer %@", [self.application objectForKey:@"access_token"] ];
+    NSMutableDictionary* headers = nil;
+    
+    request.HTTPMethod = @"POST";
+    
+    headers = [request.allHTTPHeaderFields mutableCopy];
+    [headers setObject:str forKey:@"Authorization"];
+    request.allHTTPHeaderFields = headers;
+    
+    NSString* param = [[NSString alloc]initWithFormat:@"grant_type=passwords&client_id=%@&client_secret=%@&username%@&password=%@",[OAuth2 getId],[OAuth2 getSecret], login, password];
+    [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding ]];
+    
+    
+    NSLog(@"Access token : %@",[self.application objectForKey:@"access_token"]);
+    
+    // 3
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+      {
+          if(!error)
+          {
+              NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+              
+              if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
+              {
+                  //self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
+                  NSLog( @"%@", [code objectForKey:@"result"] );
+              }
+              
+              else if([[[code objectForKey:@"code"]description] isEqualToString:@"401"])
+              {
+                  NSLog(@"Refresh_token used : %@",[self.application objectForKey:@"refresh_token"]);
+                  
+                  [self setTokensWithRefreshTokenWithTokenType:1];
+                  [NSThread sleepForTimeInterval:2.0f];
+                  
+                  //On refais la requete avec les nouveaux token
+                  NSString* str = [[NSString alloc]initWithFormat:@"Bearer %@",[self.application objectForKey:@"access_token"]];
+                  NSLog(@"Acces token : %@",[self.application objectForKey:@"access_token"]);
+                  NSMutableDictionary* headers = [request.allHTTPHeaderFields mutableCopy];
+                  [headers setObject:str forKey:@"Authorization"];
+                  request.allHTTPHeaderFields = headers;
+                  [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                    {
+                        if(!error)
+                        {
+                            NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                            if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
+                            {
+                                NSLog( @"%@", [code objectForKey:@"result"] );
+                            }
+                            else{
+                                NSLog(@"Uncaugth error %@ dans le refresh token ligne 59",[code objectForKey:@"code"]);
+                            }
+                        }
+                    }] resume];
+                  ///Fin de la deuxieme requete
+              }
+              else
+              {
+                  NSLog(@"Uncaugth error %@",[code objectForKey:@"code"]);
+              }
+          }
+          
+      }] resume];
+}
 
 -(void)setUserTokens{
        NSLog(@"setUserTokens\n");
