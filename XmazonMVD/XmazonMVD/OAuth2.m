@@ -76,8 +76,6 @@
     [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding ]];
     
     
-    NSLog(@"Access token : %@",[self.application objectForKey:@"access_token"]);
-    
     // 3
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
@@ -148,8 +146,6 @@
     NSString* param = [[NSString alloc]initWithFormat:@"grant_type=passwords&client_id=%@&client_secret=%@&username%@&password=%@",[OAuth2 getId],[OAuth2 getSecret], login, password];
     [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding ]];
     
-    
-    NSLog(@"Access token : %@",[self.application objectForKey:@"access_token"]);
     
     // 3
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
