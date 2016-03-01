@@ -30,6 +30,8 @@
         NSMutableDictionary* headers = [request.allHTTPHeaderFields mutableCopy];
         [headers setObject:str forKey:@"Authorization"];
         request.allHTTPHeaderFields = headers;
+        
+        NSLog( @"Access token : %@", [oauth.application objectForKey:@"access_token"] );
 
         
         // 3
