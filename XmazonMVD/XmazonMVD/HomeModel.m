@@ -18,6 +18,8 @@
     if(self = [super init]){
         self.oauth = oauth;
         //Init le tableau avec tous les magasins
+        
+        [oauth createUserWithEmail: @"GET" andPassword:@"GET" ];
         // 1
         NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr/store/list"];
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -30,7 +32,7 @@
         NSMutableDictionary* headers = [request.allHTTPHeaderFields mutableCopy];
         [headers setObject:str forKey:@"Authorization"];
         request.allHTTPHeaderFields = headers;
-
+        NSLog(@"Access token : %@",[oauth.application objectForKey:@"access_token"]);
         
         // 3
         [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

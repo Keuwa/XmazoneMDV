@@ -25,6 +25,7 @@
 -(void)setTokensWithRefreshTokenWithTokenType:(int)type;
 -(void)setTokens;
 -(void)setUserTokens;
+-(void)createUserWithEmail: (NSString *) email andPassword: (NSString *) password;
 
 
 +(NSString*)getId;
