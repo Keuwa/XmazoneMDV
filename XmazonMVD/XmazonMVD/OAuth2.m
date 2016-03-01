@@ -142,6 +142,7 @@
     
     headers = [request.allHTTPHeaderFields mutableCopy];
     [headers setObject:str forKey:@"Authorization"];
+    
     request.allHTTPHeaderFields = headers;
     
     NSString* param = [[NSString alloc]initWithFormat:@"grant_type=passwords&client_id=%@&client_secret=%@&username%@&password=%@",[OAuth2 getId],[OAuth2 getSecret], login, password];

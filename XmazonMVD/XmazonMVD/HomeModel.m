@@ -20,7 +20,7 @@
         //Init le tableau avec tous les magasins
         
         [oauth createUserWithEmail: @"bb" andPassword:@"bb" ];
-        [oauth connectUserWithLogin:@"GET" andPassword:@"bb" ];
+        [oauth connectUserWithLogin:@"bb" andPassword:@"bb" ];
         
         // 1
         NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr/store/list"];
