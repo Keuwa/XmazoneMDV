@@ -18,6 +18,11 @@
 		55FE39711C723B3800BD1C84 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FE396F1C723B3800BD1C84 /* HomeViewController.xib */; };
 		55FE39741C723CB200BD1C84 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39731C723CB200BD1C84 /* HomeModel.m */; };
 		55FE39771C723D9D00BD1C84 /* OAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39761C723D9D00BD1C84 /* OAuth2.m */; };
+		FE3861B71C85E37E00AB2B57 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3861B61C85E37E00AB2B57 /* CategoryModel.m */; };
+		FE3861BB1C8605CD00AB2B57 /* BaseMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3861B91C8605CD00AB2B57 /* BaseMainViewController.m */; };
+		FE3861BC1C8605CD00AB2B57 /* BaseMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3861BA1C8605CD00AB2B57 /* BaseMainViewController.xib */; };
+		FE3861C01C8608BB00AB2B57 /* SubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3861BE1C8608BB00AB2B57 /* SubscribeViewController.m */; };
+		FE3861C11C8608BB00AB2B57 /* SubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3861BF1C8608BB00AB2B57 /* SubscribeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,14 @@
 		55FE39731C723CB200BD1C84 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		55FE39751C723D9D00BD1C84 /* OAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth2.h; sourceTree = "<group>"; };
 		55FE39761C723D9D00BD1C84 /* OAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth2.m; sourceTree = "<group>"; };
+		FE3861B51C85E37E00AB2B57 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		FE3861B61C85E37E00AB2B57 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		FE3861B81C8605CD00AB2B57 /* BaseMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMainViewController.h; sourceTree = "<group>"; };
+		FE3861B91C8605CD00AB2B57 /* BaseMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMainViewController.m; sourceTree = "<group>"; };
+		FE3861BA1C8605CD00AB2B57 /* BaseMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseMainViewController.xib; sourceTree = "<group>"; };
+		FE3861BD1C8608BB00AB2B57 /* SubscribeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeViewController.h; sourceTree = "<group>"; };
+		FE3861BE1C8608BB00AB2B57 /* SubscribeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeViewController.m; sourceTree = "<group>"; };
+		FE3861BF1C8608BB00AB2B57 /* SubscribeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +114,17 @@
 				55FE396F1C723B3800BD1C84 /* HomeViewController.xib */,
 				55FE39721C723CB200BD1C84 /* HomeModel.h */,
 				55FE39731C723CB200BD1C84 /* HomeModel.m */,
+				FE3861B51C85E37E00AB2B57 /* CategoryModel.h */,
+				FE3861B61C85E37E00AB2B57 /* CategoryModel.m */,
 				55FE39681C7224F800BD1C84 /* LoginViewController.h */,
 				55FE39691C7224F800BD1C84 /* LoginViewController.m */,
 				55FE396A1C7224F800BD1C84 /* LoginViewController.xib */,
+				FE3861BD1C8608BB00AB2B57 /* SubscribeViewController.h */,
+				FE3861BE1C8608BB00AB2B57 /* SubscribeViewController.m */,
+				FE3861BF1C8608BB00AB2B57 /* SubscribeViewController.xib */,
+				FE3861B81C8605CD00AB2B57 /* BaseMainViewController.h */,
+				FE3861B91C8605CD00AB2B57 /* BaseMainViewController.m */,
+				FE3861BA1C8605CD00AB2B57 /* BaseMainViewController.xib */,
 				55FE394A1C72237000BD1C84 /* Images.xcassets */,
 				55FE394C1C72237000BD1C84 /* LaunchScreen.xib */,
 				55FE393D1C72237000BD1C84 /* Supporting Files */,
@@ -181,7 +202,7 @@
 		55FE39321C72237000BD1C84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Pinson Celine";
 				TargetAttributes = {
 					55FE39391C72237000BD1C84 = {
@@ -218,9 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				55FE394E1C72237000BD1C84 /* LaunchScreen.xib in Resources */,
+				FE3861C11C8608BB00AB2B57 /* SubscribeViewController.xib in Resources */,
 				55FE394B1C72237000BD1C84 /* Images.xcassets in Resources */,
 				55FE396C1C7224F800BD1C84 /* LoginViewController.xib in Resources */,
 				55FE39711C723B3800BD1C84 /* HomeViewController.xib in Resources */,
+				FE3861BC1C8605CD00AB2B57 /* BaseMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55FE39741C723CB200BD1C84 /* HomeModel.m in Sources */,
+				FE3861B71C85E37E00AB2B57 /* CategoryModel.m in Sources */,
+				FE3861C01C8608BB00AB2B57 /* SubscribeViewController.m in Sources */,
+				FE3861BB1C8605CD00AB2B57 /* BaseMainViewController.m in Sources */,
 				55FE39431C72237000BD1C84 /* AppDelegate.m in Sources */,
 				55FE39771C723D9D00BD1C84 /* OAuth2.m in Sources */,
 				55FE39401C72237000BD1C84 /* main.m in Sources */,
@@ -298,6 +324,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -363,6 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XmazonMVD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ESGI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -373,6 +401,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = XmazonMVD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ESGI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -391,6 +420,7 @@
 				);
 				INFOPLIST_FILE = XmazonMVDTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ESGI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XmazonMVD.app/XmazonMVD";
 			};
@@ -406,6 +436,7 @@
 				);
 				INFOPLIST_FILE = XmazonMVDTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ESGI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XmazonMVD.app/XmazonMVD";
 			};
@@ -430,6 +461,7 @@
 				55FE395F1C72237000BD1C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55FE39601C72237000BD1C84 /* Build configuration list for PBXNativeTarget "XmazonMVDTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +470,7 @@
 				55FE39621C72237000BD1C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
