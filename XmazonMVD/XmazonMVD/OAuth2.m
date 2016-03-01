@@ -45,6 +45,8 @@
                 self.application = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
                 NSLog(@" After refresh token : %@",self.application);
                 [userDefaults setObject:self.application forKey:@"application"];
+                
+                [self setTokens];
             }
             else{ //refresh user
                 self.user = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];

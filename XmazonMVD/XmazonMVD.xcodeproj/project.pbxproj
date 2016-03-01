@@ -18,6 +18,7 @@
 		55FE39711C723B3800BD1C84 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FE396F1C723B3800BD1C84 /* HomeViewController.xib */; };
 		55FE39741C723CB200BD1C84 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39731C723CB200BD1C84 /* HomeModel.m */; };
 		55FE39771C723D9D00BD1C84 /* OAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39761C723D9D00BD1C84 /* OAuth2.m */; };
+		FE3861B71C85E37E00AB2B57 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3861B61C85E37E00AB2B57 /* CategoryModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		55FE39731C723CB200BD1C84 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		55FE39751C723D9D00BD1C84 /* OAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth2.h; sourceTree = "<group>"; };
 		55FE39761C723D9D00BD1C84 /* OAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth2.m; sourceTree = "<group>"; };
+		FE3861B51C85E37E00AB2B57 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		FE3861B61C85E37E00AB2B57 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				55FE396F1C723B3800BD1C84 /* HomeViewController.xib */,
 				55FE39721C723CB200BD1C84 /* HomeModel.h */,
 				55FE39731C723CB200BD1C84 /* HomeModel.m */,
+				FE3861B51C85E37E00AB2B57 /* CategoryModel.h */,
+				FE3861B61C85E37E00AB2B57 /* CategoryModel.m */,
 				55FE39681C7224F800BD1C84 /* LoginViewController.h */,
 				55FE39691C7224F800BD1C84 /* LoginViewController.m */,
 				55FE396A1C7224F800BD1C84 /* LoginViewController.xib */,
@@ -239,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55FE39741C723CB200BD1C84 /* HomeModel.m in Sources */,
+				FE3861B71C85E37E00AB2B57 /* CategoryModel.m in Sources */,
 				55FE39431C72237000BD1C84 /* AppDelegate.m in Sources */,
 				55FE39771C723D9D00BD1C84 /* OAuth2.m in Sources */,
 				55FE39401C72237000BD1C84 /* main.m in Sources */,
@@ -430,6 +436,7 @@
 				55FE395F1C72237000BD1C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55FE39601C72237000BD1C84 /* Build configuration list for PBXNativeTarget "XmazonMVDTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +445,7 @@
 				55FE39621C72237000BD1C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
