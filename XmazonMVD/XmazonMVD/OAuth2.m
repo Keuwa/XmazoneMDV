@@ -143,21 +143,21 @@
     
     request.allHTTPHeaderFields = headers;
     
-    NSString* param = [[NSString alloc]initWithFormat:@"grant_type=passwords&client_id=%@&client_secret=%@&username%@&password=%@",[OAuth2 getId],[OAuth2 getSecret], login, password];
+    NSString* param = [[NSString alloc]initWithFormat:@"grant_type=password&client_id=%@&client_secret=%@&username=%@&password=%@",[OAuth2 getId],[OAuth2 getSecret], login, password];
     [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding ]];
     
     
     // 3
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-      {
-          if(!error)
-          {
-              NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-              
-              if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
+    {
+        if(!error)
+        {
+            NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+
+            
+              if( [code objectForKey:@"code"] == nil )
               {
-                  //self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
-                  NSLog( @"%@", [code objectForKey:@"result"] );
+                  self.user =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
               }
               
               else if([[[code objectForKey:@"code"]description] isEqualToString:@"401"])
@@ -178,12 +178,13 @@
                         if(!error)
                         {
                             NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-                            if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
+                            if([[[code objectForKey:@"token_type"]description] isEqualToString:@"bearer"])
                             {
-                                NSLog( @"%@", [code objectForKey:@"result"] );
+                                //self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
+                                self.user =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
                             }
                             else{
-                                NSLog(@"Uncaugth error %@ dans le refresh token ligne 59",[code objectForKey:@"code"]);
+                                NSLog(@"Uncaugth error %@ dans le user connect refresh token",[code objectForKey:@"code"]);
                             }
                         }
                     }] resume];
@@ -191,7 +192,7 @@
               }
               else
               {
-                  NSLog(@"Uncaugth error %@",[code objectForKey:@"code"]);
+                  NSLog(@"Uncaugth error %@ dans le user connect token",[code objectForKey:@"code"]);
               }
           }
           

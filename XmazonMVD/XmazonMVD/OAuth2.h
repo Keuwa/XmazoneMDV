@@ -11,8 +11,8 @@
 @interface OAuth2 : NSObject
 // Classe qui contient les différents éléments nécessaire au protocole OAuth2 token/refreshtoken/ID/Secret
 {
-    NSMutableDictionary* application_; //Contient le retour de oauth/token credentials
-    NSMutableDictionary* user_;        //Contient le retour de oauth/token password
+    NSMutableDictionary* application_; // Contient le retour de oauth / token credentials
+    NSMutableDictionary* user_;        // Contient le retour de oauth / token password
 }
 @property (nonatomic,strong)NSMutableDictionary* application;
 @property (nonatomic,strong)NSMutableDictionary* user;
