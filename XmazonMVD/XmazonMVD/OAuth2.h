@@ -13,6 +13,7 @@
 {
     NSMutableDictionary* application_; // Contient le retour de oauth / token credentials
     NSMutableDictionary* user_;        // Contient le retour de oauth / token password
+    bool bAnswer;
 }
 @property (nonatomic,strong)NSMutableDictionary* application;
 @property (nonatomic,strong)NSMutableDictionary* user;
@@ -28,7 +29,7 @@
 
 
 -(void)createUserWithEmail: (NSString *) email andPassword: (NSString *) password;
--(void)connectUserWithLogin: (NSString *) login andPassword: (NSString *) password;
+-(bool)connectUserWithLogin: (NSString *) login andPassword: (NSString *) password;
 
 
 +(NSString*)getId;

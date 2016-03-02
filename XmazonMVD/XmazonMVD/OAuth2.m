@@ -127,7 +127,7 @@
     }] resume];
 }
 
--(void) connectUserWithLogin: (NSString *) login andPassword: (NSString *) password
+-(bool) connectUserWithLogin: (NSString *) login andPassword: (NSString *) password
 {
     NSURL * url = [ NSURL URLWithString:@"http://xmazon.appspaces.fr/oauth/token" ];
     NSURLSessionConfiguration * config = [ NSURLSessionConfiguration defaultSessionConfiguration ];
@@ -146,6 +146,7 @@
     NSString* param = [[NSString alloc]initWithFormat:@"grant_type=password&client_id=%@&client_secret=%@&username=%@&password=%@",[OAuth2 getId],[OAuth2 getSecret], login, password];
     [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding ]];
     
+    bAnswer = false;
     
     // 3
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
@@ -158,6 +159,8 @@
               if( [code objectForKey:@"code"] == nil )
               {
                   self.user =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                  bAnswer = true;
+                  NSLog(@"%@", self.user );
               }
               
               else if([[[code objectForKey:@"code"]description] isEqualToString:@"401"])
@@ -165,7 +168,7 @@
                   NSLog(@"Refresh_token used : %@",[self.application objectForKey:@"refresh_token"]);
                   
                   [self setTokensWithRefreshTokenWithTokenType:1];
-                  [NSThread sleepForTimeInterval:2.0f];
+                  
                   
                   //On refais la requete avec les nouveaux token
                   NSString* str = [[NSString alloc]initWithFormat:@"Bearer %@",[self.application objectForKey:@"access_token"]];
@@ -182,6 +185,8 @@
                             {
                                 //self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
                                 self.user =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                                NSLog(@"%@", self.user );
+                                bAnswer = true;
                             }
                             else{
                                 NSLog(@"Uncaugth error %@ dans le user connect refresh token",[code objectForKey:@"code"]);
@@ -197,6 +202,8 @@
           }
           
       }] resume];
+    [NSThread sleepForTimeInterval:2.0f];
+    return bAnswer;
 }
 
 -(void)setUserTokens{

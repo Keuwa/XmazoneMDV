@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OAuth2.h"
 
 @interface LoginViewController : UIViewController
+{
+@private
+    OAuth2 * auth_;
+}
+@property (weak, nonatomic) IBOutlet UITextField *loginText;
+@property (weak, nonatomic) IBOutlet UITextField *passwordText;
+
+@property (nonatomic,strong)OAuth2* auth;
 
 @end

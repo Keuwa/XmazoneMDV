@@ -13,10 +13,23 @@
 @end
 
 @implementation SubscribeViewController
-
+@synthesize auth = auth_;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(instancetype) initWithOauth: (OAuth2*)oauth
+{
+    if(self = [super init])
+    {
+        self.auth = oauth;
+    }
+    
+    return self;
+}
+- (IBAction)registerClick:(id)sender {
+    [self.auth createUserWithEmail:self.usernameText.text andPassword:self.passwordText.text];
 }
 
 - (void)didReceiveMemoryWarning {

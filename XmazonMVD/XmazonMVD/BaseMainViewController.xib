@@ -26,7 +26,7 @@
                 </label>
                 <view contentMode="scaleToFill" id="YTD-vm-PGO">
                     <rect key="frame" x="0.0" y="280" width="320" height="288"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HgD-ho-9i2">
                             <rect key="frame" x="113" y="129" width="94" height="30"/>
@@ -38,7 +38,7 @@
                 </view>
                 <view contentMode="scaleToFill" id="Y8V-Jh-Cag">
                     <rect key="frame" x="-17" y="0.0" width="320" height="281"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dxu-rG-Zkd">
                             <rect key="frame" x="91" y="126" width="139" height="30"/>
