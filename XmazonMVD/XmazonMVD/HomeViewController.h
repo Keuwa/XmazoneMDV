@@ -12,7 +12,9 @@
 {
     __weak IBOutlet UITableView *tableView;
     HomeModel* model_;
+    OAuth2 * auth_;
 }
 @property (strong,nonatomic)HomeModel* model;
-
+-(instancetype) initWithOauth: (OAuth2*)oauth;
+@property (nonatomic,strong)OAuth2* auth;
 @end

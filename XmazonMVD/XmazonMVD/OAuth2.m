@@ -57,6 +57,79 @@
     }] resume];
 }
 
+-(NSMutableDictionary*) getCategoryList: (NSString *) uid
+{
+    NSString * strUrl = [ [NSString alloc]initWithFormat:@"http://xmazon.appspaces.fr/category/list?store_uid=%@", uid ];
+    NSURL * url = [ NSURL URLWithString:strUrl ];
+    NSURLSessionConfiguration * config = [ NSURLSessionConfiguration defaultSessionConfiguration ];
+    NSURLSession * session = [ NSURLSession sessionWithConfiguration: config ];
+    NSMutableURLRequest * request = [ [NSMutableURLRequest alloc] initWithURL: url ];
+    NSString * str = [ [NSString alloc]initWithFormat:@"Bearer %@", [self.application objectForKey:@"access_token"] ];
+    NSMutableDictionary* headers = nil;
+    
+    request.HTTPMethod = @"GET";
+    
+    headers = [request.allHTTPHeaderFields mutableCopy];
+    [headers setObject:str forKey:@"Authorization"];
+    request.allHTTPHeaderFields = headers;
+    
+    tempValue = nil;
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+      {
+          if(!error)
+          {
+              NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+              
+              if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
+              {
+                  //self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
+                  tempValue = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                  NSLog( @"%@", tempValue );
+              }
+              
+              else if([[[code objectForKey:@"code"]description] isEqualToString:@"401"])
+              {
+                  NSLog(@"Refresh_token used : %@",[self.application objectForKey:@"refresh_token"]);
+                  
+                  [self setTokensWithRefreshTokenWithTokenType:1];
+                  [NSThread sleepForTimeInterval:2.0f];
+                  
+                  //On refais la requete avec les nouveaux token
+                  NSString* str = [[NSString alloc]initWithFormat:@"Bearer %@",[self.application objectForKey:@"access_token"]];
+                  NSLog(@"Acces token : %@",[self.application objectForKey:@"access_token"]);
+                  NSMutableDictionary* headers = [request.allHTTPHeaderFields mutableCopy];
+                  [headers setObject:str forKey:@"Authorization"];
+                  request.allHTTPHeaderFields = headers;
+                  [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                    {
+                        if(!error)
+                        {
+                            NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                            if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
+                            {
+                                tempValue = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                                NSLog( @"%@", tempValue );
+                            }
+                            else{
+                                NSLog(@"Uncaugth error %@ dans le refresh token ligne 59",[code objectForKey:@"code"]);
+                            }
+                        }
+                    }] resume];
+                  ///Fin de la deuxieme requete
+              }
+              else
+              {
+                  NSLog(@"Uncaugth error %@",[code objectForKey:@"code"]);
+              }
+          }
+          
+      }] resume];
+    
+    return tempValue;
+    
+    
+}
 -(void) createUserWithEmail: (NSString *) email andPassword: (NSString *) password
 {
     NSURL * url = [ NSURL URLWithString:@"http://xmazon.appspaces.fr/auth/subscribe" ];
@@ -168,7 +241,6 @@
                   NSLog(@"Refresh_token used : %@",[self.application objectForKey:@"refresh_token"]);
                   
                   [self setTokensWithRefreshTokenWithTokenType:1];
-                  
                   
                   //On refais la requete avec les nouveaux token
                   NSString* str = [[NSString alloc]initWithFormat:@"Bearer %@",[self.application objectForKey:@"access_token"]];

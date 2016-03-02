@@ -39,7 +39,7 @@
 {
     if( [self.auth connectUserWithLogin:self.loginText.text andPassword:self.passwordText.text] == true )
     {
-    HomeViewController* home = [[HomeViewController alloc]init];
+    HomeViewController* home = [[HomeViewController alloc]initWithOauth:self.auth];
     [self.navigationController pushViewController:home animated:YES];
     
     NSLog( @"%@ %@", self.loginText.text, self.passwordText.text );

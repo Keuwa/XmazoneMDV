@@ -18,6 +18,7 @@
 
 @implementation HomeViewController
 @synthesize model = model_;
+@synthesize auth = auth_;
 
 -(void)viewDidAppear:(BOOL)animated{
     [NSThread sleepForTimeInterval:3.0f];
@@ -36,14 +37,29 @@
     NSMutableDictionary* user_token = [[NSMutableDictionary alloc]initWithDictionary:[userDefaults objectForKey:@"user"]];
     
     ///[app_token setObject:@"azeazaeaze"forKey:@"access_token"];
-    OAuth2* auth = [[OAuth2 alloc]initWithDictionaryUser:user_token andDictionaryApp:app_token];
-    self.model = [[HomeModel alloc]initWithOauth:auth];
+    self.model = [[HomeModel alloc]initWithOauth:self.auth];
     // Do any additional setup after loading the view from its nib.
     
 }
 
+-(instancetype) initWithOauth: (OAuth2*)oauth
+{
+    if(self = [super init])
+    {
+        self.auth = oauth;
+    }
+    
+    return self;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [[self.model listMagasin] count];
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog( @"%@", [[[self.model listMagasin]objectAtIndex: indexPath.row] objectForKey:@"uid"]);
+    [self.auth getCategoryList: [[[self.model listMagasin]objectAtIndex: indexPath.row] objectForKey:@"uid"]];
 }
 
 static NSString* const kCellReuseIdentifier = @"CoolId";
