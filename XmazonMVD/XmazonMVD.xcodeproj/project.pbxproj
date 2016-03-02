@@ -18,6 +18,8 @@
 		55FE39711C723B3800BD1C84 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FE396F1C723B3800BD1C84 /* HomeViewController.xib */; };
 		55FE39741C723CB200BD1C84 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39731C723CB200BD1C84 /* HomeModel.m */; };
 		55FE39771C723D9D00BD1C84 /* OAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE39761C723D9D00BD1C84 /* OAuth2.m */; };
+		FCCA57831C872D8C0068CD6A /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCA57811C872D8C0068CD6A /* CategoryViewController.m */; };
+		FCCA57841C872D8C0068CD6A /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCA57821C872D8C0068CD6A /* CategoryViewController.xib */; };
 		FE3861B71C85E37E00AB2B57 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3861B61C85E37E00AB2B57 /* CategoryModel.m */; };
 		FE3861BB1C8605CD00AB2B57 /* BaseMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3861B91C8605CD00AB2B57 /* BaseMainViewController.m */; };
 		FE3861BC1C8605CD00AB2B57 /* BaseMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3861BA1C8605CD00AB2B57 /* BaseMainViewController.xib */; };
@@ -56,6 +58,9 @@
 		55FE39731C723CB200BD1C84 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		55FE39751C723D9D00BD1C84 /* OAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth2.h; sourceTree = "<group>"; };
 		55FE39761C723D9D00BD1C84 /* OAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth2.m; sourceTree = "<group>"; };
+		FCCA57801C872D8C0068CD6A /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		FCCA57811C872D8C0068CD6A /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		FCCA57821C872D8C0068CD6A /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
 		FE3861B51C85E37E00AB2B57 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
 		FE3861B61C85E37E00AB2B57 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		FE3861B81C8605CD00AB2B57 /* BaseMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMainViewController.h; sourceTree = "<group>"; };
@@ -110,6 +115,9 @@
 				55FE39751C723D9D00BD1C84 /* OAuth2.h */,
 				55FE39761C723D9D00BD1C84 /* OAuth2.m */,
 				55FE396D1C723B3800BD1C84 /* HomeViewController.h */,
+				FCCA57801C872D8C0068CD6A /* CategoryViewController.h */,
+				FCCA57811C872D8C0068CD6A /* CategoryViewController.m */,
+				FCCA57821C872D8C0068CD6A /* CategoryViewController.xib */,
 				55FE396E1C723B3800BD1C84 /* HomeViewController.m */,
 				55FE396F1C723B3800BD1C84 /* HomeViewController.xib */,
 				55FE39721C723CB200BD1C84 /* HomeModel.h */,
@@ -238,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCA57841C872D8C0068CD6A /* CategoryViewController.xib in Resources */,
 				55FE394E1C72237000BD1C84 /* LaunchScreen.xib in Resources */,
 				FE3861C11C8608BB00AB2B57 /* SubscribeViewController.xib in Resources */,
 				55FE394B1C72237000BD1C84 /* Images.xcassets in Resources */,
@@ -267,6 +276,7 @@
 				FE3861BB1C8605CD00AB2B57 /* BaseMainViewController.m in Sources */,
 				55FE39431C72237000BD1C84 /* AppDelegate.m in Sources */,
 				55FE39771C723D9D00BD1C84 /* OAuth2.m in Sources */,
+				FCCA57831C872D8C0068CD6A /* CategoryViewController.m in Sources */,
 				55FE39401C72237000BD1C84 /* main.m in Sources */,
 				55FE396B1C7224F800BD1C84 /* LoginViewController.m in Sources */,
 				55FE39701C723B3800BD1C84 /* HomeViewController.m in Sources */,

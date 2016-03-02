@@ -57,7 +57,7 @@
     }] resume];
 }
 
--(NSMutableDictionary*) getCategoryList: (NSString *) uid
+-(NSMutableArray*) getCategoryList: (NSString *) uid
 {
     NSString * strUrl = [ [NSString alloc]initWithFormat:@"http://xmazon.appspaces.fr/category/list?store_uid=%@", uid ];
     NSURL * url = [ NSURL URLWithString:strUrl ];
@@ -84,7 +84,7 @@
               if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
               {
                   //self.listMagasin = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
-                  tempValue = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                  tempValue = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
                   NSLog( @"%@", tempValue );
               }
               
@@ -108,7 +108,7 @@
                             NSDictionary* code =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
                             if([[[code objectForKey:@"code"]description] isEqualToString:@"0"])
                             {
-                                tempValue = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                                tempValue = [[NSMutableArray alloc]initWithArray:[code objectForKey:@"result"]];
                                 NSLog( @"%@", tempValue );
                             }
                             else{
@@ -125,6 +125,8 @@
           }
           
       }] resume];
+    
+    [NSThread sleepForTimeInterval:2.0f];
     
     return tempValue;
     

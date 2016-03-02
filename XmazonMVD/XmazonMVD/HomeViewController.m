@@ -10,6 +10,7 @@
 #import "HomeModel.h"
 #import "OAuth2.h"
 #import "BaseMainViewController.h"
+#import "CategoryViewController.h"
 
 
 @interface HomeViewController ()
@@ -32,10 +33,7 @@
     self.navigationController.navigationBar.translucent = YES;
     
     ///chargement des tokens
-    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary* app_token = [[NSMutableDictionary alloc]initWithDictionary:[userDefaults objectForKey:@"application"]];
-    NSMutableDictionary* user_token = [[NSMutableDictionary alloc]initWithDictionary:[userDefaults objectForKey:@"user"]];
-    
+
     ///[app_token setObject:@"azeazaeaze"forKey:@"access_token"];
     self.model = [[HomeModel alloc]initWithOauth:self.auth];
     // Do any additional setup after loading the view from its nib.
@@ -59,7 +57,17 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog( @"%@", [[[self.model listMagasin]objectAtIndex: indexPath.row] objectForKey:@"uid"]);
+    
+    NSMutableArray * test =
     [self.auth getCategoryList: [[[self.model listMagasin]objectAtIndex: indexPath.row] objectForKey:@"uid"]];
+    
+    if( test != nil )
+    {
+        CategoryViewController* home = [[CategoryViewController alloc]initWithOauth:self.auth andCategoryUid:test];
+        [self.navigationController pushViewController:home animated:YES];
+    }
+    
+    
 }
 
 static NSString* const kCellReuseIdentifier = @"CoolId";
